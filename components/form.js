@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
 
-    fetch('../config.xml')
+    fetch('config.xml')
         .then(response => response.text())
         .then(xmlText => {
             const parser = new DOMParser();
@@ -50,31 +50,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
-
+    
         const formData = new FormData(form);
-        const data = {};
-
+        let data = '<formData>';
+    
         formData.forEach((value, key) => {
-            data[key] = value;
+            data += `<${key}>${value}</${key}>`;
         });
+    
+        data += '</formData>';
+    
+        const validationErrors = validateFormData(Object.fromEntries(formData));
+        if (validationErrors.length > 0) {
+            alert('Veuillez corriger les erreurs suivantes:\n' + validationErrors.join('\n'));
+            return;
+        }
 
         try {
-            const response = await fetch('BackEnd/Api/FormRouter.php', {
+            const response = await fetch('http://localhost:8000/BackEnd/Api/FormRouter.php', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/xml',
                 },
-                body: JSON.stringify(data),
+                body: data,
             });
-
+    
             if (response.ok) {
                 alert('Votre message a été envoyé avec succès.');
                 form.reset();
             } else {
-                alert('Une erreur est survenue lors de l\'envoi du message.');
+                const errorText = await response.text();
+                alert('Une erreur est survenue lors de l\'envoi du message: ' + errorText);
             }
         } catch (error) {
             alert('Une erreur est survenue: ' + error.message);
         }
     });
 });
+
+function validateFormData(data) {
+    const errors = [];
+
+    if (!data.nom || data.nom.trim().length === 0) {
+        errors.push('Le champ "Votre Nom" est requis.');
+    }
+
+    if (!data.prenom || data.prenom.trim().length === 0) {
+        errors.push('Le champ "Votre Prénom" est requis.');
+    }
+
+    if (!data.email || !validateEmail(data.email)) {
+        errors.push('Veuillez entrer une adresse email valide.');
+    }
+
+    if (!data.description || data.description.trim().length === 0) {
+        errors.push('Le champ "Motif du contact" est requis.');
+    }
+
+    return errors;
+}
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}
