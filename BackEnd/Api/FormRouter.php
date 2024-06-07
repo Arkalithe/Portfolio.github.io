@@ -3,6 +3,11 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../vendor/autoload.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
@@ -43,10 +48,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos($_SERVER['CONTENT_TYPE'], 'a
         echo 'Validation errors: ' . implode(', ', $errors);
         exit;
     }
-    
-    http_response_code(200);
-    echo 'Votre message a été envoyé avec succès.';
+
+
+    $mail = new PHPMailer(true);
+
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp.ethereal.email';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'arden.pacocha@ethereal.email';
+        $mail->Password = 'SCzpSZ7hVqFUz3g9C6';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+
+        $mail->setFrom('arden.pacocha@ethereal.email', 'Webmaster');
+        $mail->addAddress('arden.pacocha@ethereal.email'); 
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Nouveau message de contact';
+        $mail->Body    = "Nom: $nom<br>Prénom: $prenom<br>Email: $email<br>Description: $description";
+        $mail->AltBody = "Nom: $nom\nPrénom: $prenom\nEmail: $email\nDescription: $description";
+
+        $mail->send();
+        http_response_code(200);
+        echo 'Votre message a été envoyé avec succès.';
+    } catch (Exception $e) {
+        http_response_code(500);
+        echo "L'email n'a pas pu être envoyé. Erreur: {$mail->ErrorInfo}";
+    }
 } else {
     http_response_code(400);
     echo 'Invalid request';
 }
+
