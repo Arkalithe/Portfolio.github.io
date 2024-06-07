@@ -1,40 +1,55 @@
 function genereEntete() {
-
     let entete = document.createElement("header");
     let nav = document.createElement("nav");
     let logoContainer = document.createElement("div");
-    let navBar = document.createElement("ul");
-
-
-    entete.classList.add("container", "d-flex", "justify-content-center", "align-items-center");
-    nav.classList.add("navbar", "navbar-expand-lg", "w-100", "d-flex", "justify-content-between");
-    logoContainer.classList.add("navbar-brand");
-    navBar.classList.add("navbar-nav", "flex-row", "ml-auto");
-
+    let navBar = document.createElement("div");
+    let navbarToggler = document.createElement("button");
+    let navbarCollapse = document.createElement("div")
+    let togglerIcon = document.createElement("span")
     let main = document.querySelector('main');
-    document.body.insertBefore(entete, main);
 
+    entete.classList.add("bg-primary", "w-100", "flex-grow-1");
+    entete.style.width = "100%";
+    nav.classList.add("navbar", "navbar-expand-lg", "container-fluid", "d-flex", "justify-content-between");
+    logoContainer.classList.add("navbar-brand");
+    navBar.classList.add("navbar-nav", "flex-row", "ms-auto");
+    navbarToggler.classList.add("navbar-toggler");
+    togglerIcon.classList.add("navbar-toggler-icon");
+
+    navbarToggler.setAttribute("type", "button");
+    navbarToggler.setAttribute("data-bs-toggle", "collapse");
+    navbarToggler.setAttribute("data-bs-target", "#navbarNav");
+    navbarToggler.setAttribute("aria-controls", "navbarNav");
+    navbarToggler.setAttribute("aria-expanded", "false");
+    navbarToggler.setAttribute("aria-label", "Toggle navigation");
+
+    navbarCollapse.id = "navbarNav";
+    navbarCollapse.classList.add("collapse", "navbar-collapse");
+
+    document.body.insertBefore(entete, main);
     entete.appendChild(nav);
     nav.appendChild(logoContainer);
-    nav.appendChild(navBar);
+    nav.appendChild(navbarToggler);
+    nav.appendChild(navbarCollapse);
+    navbarCollapse.appendChild(navBar);
+    navbarToggler.appendChild(togglerIcon);
+    
+    function createNavButton(id, href, textContent, classes = []) {
+        let button = document.createElement("button");
+        button.classList.add("btn", ...classes, "m-1");
+        button.id = `navButton${id}`;
 
-    function createNavItem(id, href, textContent, classes = []) {
-        let navItem = document.createElement("li");
-        navItem.classList.add("nav-item", "m-1");
-        navItem.id = `navItem${id}`;
+        button.addEventListener("click", function() {
+            window.location.href = href;
+        });
 
-        let link = document.createElement("a");
-        link.setAttribute("href", href);
-        link.textContent = textContent;
-        link.classList.add(...classes, "p-1");
-        navItem.appendChild(link);
-        navBar.appendChild(navItem);
+        button.textContent = textContent;
+        navBar.appendChild(button);
     }
-    createNavItem(2, "./index.html", "Acceuil", ["btn", 'btn-primary', "navbar-nav"]);
-    createNavItem(3, "./about.html", "A propos", ["btn", 'btn-primary', "navbar-nav"]);
-    createNavItem(4, "./contact.html", "Contacte", ["btn", 'btn-primary', "navbar-nav"]);
-    createNavItem(5, "./project.html", "Mes projets", ["btn", 'btn-primary', "navbar-nav"]);
-
+    createNavButton(2, "./index.html", "Accueil", ["btn-primary", "border"]);
+    createNavButton(3, "./about.html", "À propos", ["btn-primary", "border"]);
+    createNavButton(4, "./contact.html", "Contact", ["btn-primary", "border"]);
+    createNavButton(5, "./project.html", "Mes projets", ["btn-primary", "border"]);
 }
 genereEntete();
 

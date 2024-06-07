@@ -1,0 +1,42 @@
+.navbar-collapse {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-toggler.collapsed .navbar-toggler-icon {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+        transform: rotate(0);
+    }
+
+    /* Styles pour les appareils mobiles */
+    @media (max-width: 991.98px) { 
+        .navbar-collapse {
+            position: absolute;
+            top: 56px;
+            right: 0;
+            width: 250px; 
+            height: calc(100% - 56px);
+            background-color: white;
+            transform: translateX(100%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .navbar-collapse.show {
+            transform: translateX(0);
+        }
+
+        .navbar-nav {
+            flex-direction: column;
+            width: 100%; 
+        }
+
+        .navbar-nav .btn {
+            width: 100%;
+            text-align: left; 
+        }
+    }
