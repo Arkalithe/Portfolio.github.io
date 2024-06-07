@@ -1,18 +1,19 @@
 function genereEntete() {
 
     let entete = document.createElement("header");
-    let main = document.createElement('main')
     let nav = document.createElement("nav");
     let logoContainer = document.createElement("div");
     let navBar = document.createElement("ul");
 
-    entete.classList.add("container", "d-flex", "justify-content-center", "align-items-center");  
+
+    entete.classList.add("container", "d-flex", "justify-content-center", "align-items-center");
     nav.classList.add("navbar", "navbar-expand-lg", "w-100", "d-flex", "justify-content-between");
     logoContainer.classList.add("navbar-brand");
     navBar.classList.add("navbar-nav", "flex-row", "ml-auto");
 
-    document.body.appendChild(main);
-    document.body.appendChild(entete);
+    let main = document.querySelector('main');
+    document.body.insertBefore(entete, main);
+
     entete.appendChild(nav);
     nav.appendChild(logoContainer);
     nav.appendChild(navBar);
@@ -30,9 +31,9 @@ function genereEntete() {
         navBar.appendChild(navItem);
     }
     createNavItem(2, "./index.html", "Acceuil", ["btn", 'btn-primary', "navbar-nav"]);
-    createNavItem(3, "./about.html", "About", ["btn", 'btn-primary', "navbar-nav"]);
-    createNavItem(4, "./contact.html", "Scenario", ["btn", 'btn-primary', "navbar-nav"]);
-    createNavItem(5, "./project.html", "Team", ["btn", 'btn-primary', "navbar-nav"]);
+    createNavItem(3, "./about.html", "A propos", ["btn", 'btn-primary', "navbar-nav"]);
+    createNavItem(4, "./contact.html", "Contacte", ["btn", 'btn-primary', "navbar-nav"]);
+    createNavItem(5, "./project.html", "Mes projets", ["btn", 'btn-primary', "navbar-nav"]);
 
 }
 genereEntete();
