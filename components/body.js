@@ -1,5 +1,5 @@
 function bodyClass() {
 let body = document.querySelector("body")
-body.classList = " text-center text-white bg-dark"
+body.classList = "d-flex flex-column min-vh-100 text-center text-white bg-dark"
 }
 bodyClass()

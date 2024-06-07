@@ -4,28 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
 </head>
 
-<body>
-    <main class="container">
-        <h1>Mon site portfolio</h1>
-        <section>
-            <h2>Mon Parcours</h2>
-            <article>Le text de mon parcour</article>
-        </section>
-        <section>
-            <h2>Mes projet</h2>
-            <article>Le text de mes porjet</article>
-        </section>
-        <section>
-            <h2>Me contacté</h2>
-            <article>Le text de me contacte</article>
+<body >
+    <main class="container flex-grow-1 d-flex flex-column">
+        <h1 class="mb-4 text-center">Vigneron Tristan</h1>
+        <section class="row flex-grow-1">
+
+            <article class="col-md-6 mb-2 d-flex flex-column">
+                <div class="bg-danger border border-light border-5 rounded p-3 flex-grow-1 d-flex flex-column">
+                    <h2>Qui je suis </h2>
+                    <div class="mb-2 flex-grow-1 d-flex flex-column">
+
+                        <div class="flex-grow-1">
+                            <p>Je me nomme Vigneron Tristan. Je suis un jeune développeur basé en France, plus particulièrement à Clermont-Ferrand. Mes deux grandes passions sont les jeux vidéo et la pâtisserie.</p>
+                        </div>
+                        <button class="btn btn-dark w-auto mt-auto mx-auto">
+                            <a href="contact.html" rel="nofollow" class="text-white text-decoration-none">Me contacter</a>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="col-md-6 mb-2 d-flex flex-column">
+                <div class="bg-danger border border-light border-5 rounded p-3 flex-grow-1 d-flex flex-column">
+                    <h2>Mon Parcours Professionnel</h2>
+                    <div class="mb-2 flex-grow-1 d-flex flex-column">
+
+                        <div class="flex-grow-1">
+                            <p>J'ai travaillé plusieurs années en tant que pâtissier et depuis 2022, je cherche à me reconvertir en tant que développeur. J'ai commencé par un diplôme de Développeur Web et Web Mobile (DWWM) et j'ai continué par un titre de Concepteur Développeur d'Applications (CDA).</p>
+                        </div>
+                        <button class="btn btn-dark w-auto mt-auto mx-auto">
+                            <a href="project.html" rel="nofollow" class="text-white text-decoration-none">Mes Projets</a>
+                        </button>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
-    <script src="Components/body.js"> </script>
-    <script src="Components/header.js"> </script>
+
+    <script src="Components/body.js"></script>
+    <script src="Components/header.js"></script>
 </body>
 
 </html>
