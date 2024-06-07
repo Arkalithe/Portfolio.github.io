@@ -1,0 +1,10 @@
+<!ELEMENT configuration (contactForm)>
+<!ELEMENT contactForm (title, helpText, fields, submitButton)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT helpText (#PCDATA)>
+<!ELEMENT fields (field+)>
+<!ELEMENT field (label, id, type)>
+<!ELEMENT label (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT submitButton (#PCDATA)>

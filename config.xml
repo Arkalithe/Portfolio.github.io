@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration SYSTEM "config.dtd">
+<configuration>
+    <contactForm>
+        <title>Me contacter</title>
+        <helpText>Aucune des informations données ne sera partagée.</helpText>
+        <fields>
+            <field>
+                <label>Votre Nom</label>
+                <id>nom</id>
+                <type>text</type>
+            </field>
+            <field>
+                <label>Votre Prénom</label>
+                <id>prenom</id>
+                <type>text</type>
+            </field>
+            <field>
+                <label>Votre Adresse Mail</label>
+                <id>email</id>
+                <type>email</type>
+            </field>
+            <field>
+                <label>Motif du contact</label>
+                <id>description</id>
+                <type>textarea</type>
+            </field>
+        </fields>
+        <submitButton>Envoyer</submitButton>
+    </contactForm>
+</configuration>

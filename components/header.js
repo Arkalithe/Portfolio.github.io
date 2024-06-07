@@ -2,7 +2,7 @@ function genereEntete() {
     let entete = document.createElement("header");
     let nav = document.createElement("nav");
     let logoContainer = document.createElement("div");
-    let navBar = document.createElement("ul"); // Changer de div à ul pour navbar-nav
+    let navBar = document.createElement("ul");
     let navbarToggler = document.createElement("button");
     let navbarCollapse = document.createElement("div");
     let togglerIcon = document.createElement("span");
@@ -12,7 +12,7 @@ function genereEntete() {
     entete.style.width = "100%";
     nav.classList.add("navbar", "navbar-expand-lg", "container-fluid", "d-flex", "justify-content-between");
     logoContainer.classList.add("navbar-brand");
-    navBar.classList.add("navbar-nav", "flex-column", "ms-auto");
+    navBar.classList.add("navbar-nav", "ms-auto");
     navbarToggler.classList.add("navbar-toggler");
     togglerIcon.classList.add("navbar-toggler-icon");
 

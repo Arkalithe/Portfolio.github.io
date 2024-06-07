@@ -4,50 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio - Contact</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <main class="container">
         <h3>Me contacter</h3>
-        <form action="BackEnd/Api/form" method="post" aria-describedby="help">
-
-            <div>
-                <label for="nom" class="form-label">Votre Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom">
-            </div>
-
-            <div>
-                <label for="prenom" class="form-label">Votre Prénom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom">
-            </div>
-
-            <div>
-                <label for="email" class="form-label">Votre Adresse Mail</label>
-                <input type="email" class="form-control" id="email" name="email">
-            </div>
-
-            <div>
-                <label for="description" class="form-label">Motif du contacte</label>
-                <textarea id="description" class="form-control" name="description"></textarea>
-            </div>
-
-            <button type="submit" class="form-control">Envoyer</button>
-
+        <form id="contactForm" aria-describedby="Help">
         </form>
         <div id="Help" class="form-text text-white">Aucune des informations données ne sera partagée.</div>
     </main>
 
-
-
-
-
-
-
-
-    <script src="Components/body.js"> </script>
-    <script src="Components/header.js"> </script>
+    <script src="Components/body.js"></script>
+    <script src="Components/header.js"></script>
+    <script src="Components/form.js"></script>
 </body>
 
 </html>
