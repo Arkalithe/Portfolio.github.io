@@ -34,25 +34,38 @@ function genereEntete() {
     navbarCollapse.appendChild(navBar);
     navbarToggler.appendChild(togglerIcon);
 
+
+
+
     function createNavButton(id, href, textContent, classes = []) {
         let navItem = document.createElement("li");
         navItem.classList.add("nav-item");
-
+    
         let button = document.createElement("a");
+    
         button.classList.add("nav-link", "btn", ...classes, "m-1", "bg-primary", "text-center");
-        button.id = `navButton${id}`;
+    
+        button.id = `   ${id}`;
         button.href = href;
         button.textContent = textContent;
-
+    
         navItem.appendChild(button);
         navBar.appendChild(navItem);
     }
-
-    createNavButton(2, "./index.html", "Accueil", ["btn-primary", "border"]);
-    createNavButton(3, "./about.html", "À propos", ["btn-primary", "border"]);
-    createNavButton(4, "./contact.html", "Contact", ["btn-primary", "border"]);
-    createNavButton(5, "./project.html", "Mes projets", ["btn-primary", "border"]);
+    
+    const navButtons = [
+        { id: 2, href: "./index.html", textContent: "Accueil" },
+        { id: 3, href: "./about.html", textContent: "À propos" },
+        { id: 4, href: "./contact.html", textContent: "Contact" },
+        { id: 5, href: "./project.html", textContent: "Mes projets" }
+    ];
+    
+    navButtons.forEach(button => {
+        createNavButton(button.id, button.href, button.textContent, ["btn-primary", "border"]);
+    });
 }
+
+
 
 genereEntete();
 

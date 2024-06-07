@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos($_SERVER['CONTENT_TYPE'], 'a
         echo 'Validation errors: ' . implode(', ', $errors);
         exit;
     }
+    
     http_response_code(200);
     echo 'Votre message a été envoyé avec succès.';
 } else {
