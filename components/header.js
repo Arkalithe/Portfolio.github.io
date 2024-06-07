@@ -2,17 +2,17 @@ function genereEntete() {
     let entete = document.createElement("header");
     let nav = document.createElement("nav");
     let logoContainer = document.createElement("div");
-    let navBar = document.createElement("div");
+    let navBar = document.createElement("ul"); // Changer de div à ul pour navbar-nav
     let navbarToggler = document.createElement("button");
-    let navbarCollapse = document.createElement("div")
-    let togglerIcon = document.createElement("span")
+    let navbarCollapse = document.createElement("div");
+    let togglerIcon = document.createElement("span");
     let main = document.querySelector('main');
 
-    entete.classList.add("bg-primary", "w-100", "flex-grow-1");
+    entete.classList.add("bg-primary", "w-100", "flex-grow-1", "mb-2", "p-1");
     entete.style.width = "100%";
     nav.classList.add("navbar", "navbar-expand-lg", "container-fluid", "d-flex", "justify-content-between");
     logoContainer.classList.add("navbar-brand");
-    navBar.classList.add("navbar-nav", "flex-row", "ms-auto");
+    navBar.classList.add("navbar-nav", "flex-column", "ms-auto");
     navbarToggler.classList.add("navbar-toggler");
     togglerIcon.classList.add("navbar-toggler-icon");
 
@@ -33,24 +33,27 @@ function genereEntete() {
     nav.appendChild(navbarCollapse);
     navbarCollapse.appendChild(navBar);
     navbarToggler.appendChild(togglerIcon);
-    
+
     function createNavButton(id, href, textContent, classes = []) {
-        let button = document.createElement("button");
-        button.classList.add("btn", ...classes, "m-1");
+        let navItem = document.createElement("li");
+        navItem.classList.add("nav-item");
+
+        let button = document.createElement("a");
+        button.classList.add("nav-link", "btn", ...classes, "m-1", "bg-primary", "text-center");
         button.id = `navButton${id}`;
-
-        button.addEventListener("click", function() {
-            window.location.href = href;
-        });
-
+        button.href = href;
         button.textContent = textContent;
-        navBar.appendChild(button);
+
+        navItem.appendChild(button);
+        navBar.appendChild(navItem);
     }
+
     createNavButton(2, "./index.html", "Accueil", ["btn-primary", "border"]);
     createNavButton(3, "./about.html", "À propos", ["btn-primary", "border"]);
     createNavButton(4, "./contact.html", "Contact", ["btn-primary", "border"]);
     createNavButton(5, "./project.html", "Mes projets", ["btn-primary", "border"]);
 }
+
 genereEntete();
 
 window.onload = function () {
