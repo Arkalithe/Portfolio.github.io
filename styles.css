@@ -282,3 +282,23 @@ form.needs-validation {
 .section-divider:last-child {
     border-bottom: none;
 }
+
+/* Style pour la page Projets */
+.project-details {
+    display: none;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid #ff7f50; 
+}
+
+.card-project {
+
+    border-radius: 10px;
+    border: 2px solid #ff7f50; 
+}
+
+#back-button {
+    display: none;
+    margin-bottom: 20px;
+}

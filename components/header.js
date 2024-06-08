@@ -51,10 +51,10 @@ function genereEntete() {
     }
 
     const navButtons = [
-        { id: 2, href: "./index.html", textContent: "Accueil" },
-        { id: 3, href: "./about.html", textContent: "À propos" },
-        { id: 4, href: "./contact.html", textContent: "Contact" },
-        { id: 5, href: "./project.html", textContent: "Mes projets" }
+        { id: 1, href: "./index.html", textContent: "Accueil" },
+        { id: 2, href: "./about.html", textContent: "À propos" },
+        { id: 3, href: "./contact.html", textContent: "Contact" },
+        { id: 4, href: "./project.html", textContent: "Mes projets" }
     ];
 
     navButtons.forEach(button => {
