@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const fieldHTML = `
                     <div>
-                        <label for="${id}" class="form-label">${label}</label>
+                        <label for="${id}" class="form-label text-white">${label}</label>
                         ${inputElement}
                     </div>
                 `;

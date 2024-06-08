@@ -8,7 +8,7 @@ function genereEntete() {
     let togglerIcon = document.createElement("span");
     let main = document.querySelector('main');
 
-    entete.classList.add("bg-dark", "w-100", "p-1");
+    entete.classList.add("bg-dark", "w-100", "p-1", "header-custom", );
     entete.style.width = "100%";
     nav.classList.add("navbar", "navbar-expand-lg", "container-fluid", "d-flex", "justify-content-between");
     logoContainer.classList.add("navbar-brand");

@@ -185,3 +185,62 @@ body {
         color: #333333;
     }
 }
+
+/* Styles pour les éléments de formulaire */
+.form-label {
+    color: #333333; 
+}
+
+.form-control {
+    background-color: #444444;
+    border: 2px solid #ff7f50; 
+    border-radius: 5px; 
+    padding: 10px; 
+    color: #333333;
+    width: calc(100% - 30px);
+    margin: 5px auto;
+}
+
+.form-control:focus {
+    border-color: #e06f44; 
+    box-shadow: 0 0 5px rgba(255, 127, 80, 0.5); 
+    background-color: #555555;
+}
+
+.btn-primary {
+    background-color: #ff7f50; 
+    color: #333333; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #e06f44; 
+    box-shadow: 0 0 5px rgba(255, 127, 80, 0.5); 
+    outline: none; 
+}
+
+form.needs-validation {
+    border: 2px solid #ff7f50; 
+    border-radius: 15px;
+    padding: 20px;
+    
+
+}
+
+.header-custom {
+    border-bottom: 2px solid #ff7f50; 
+    padding: 10px 0;
+}
+
+.main-contact {
+    height: 100vh;
+}
+
+form.needs-validation {
+    max-width: 500px;
+    width: 100%; 
+}
