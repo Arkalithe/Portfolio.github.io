@@ -5,40 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
-<body >
-    <main class="container flex-grow-1 d-flex flex-column">
-        <h1 class="mb-4 text-center">Vigneron Tristan</h1>
-        <section class="row flex-grow-1">
+<body>
+    <main class="d-flex flex-column vh-100">
+        <section class="welcome-section flex-grow-1 d-flex justify-content-center align-items-center">
+            <div class="welcome-content text-center">
+                <h1 class="-dark">Bienvenue sur mon Portfolio</h1>
+                <p>Je suis Vigneron Tristan, développeur passionné par les jeux vidéo et la pâtisserie.</p>
+                <a href="#" class="btn btn-custom" tabindex="0" aria-label="En savoir plus sur moi">En savoir plus</a>
+            </div>
+        </section>
 
-            <article class="col-md-6 mb-2 d-flex flex-column">
-                <div class="bg-danger border border-light border-5 rounded p-3 flex-grow-1 d-flex flex-column">
-                    <h2>Qui je suis </h2>
-                    <div class="mb-2 flex-grow-1 d-flex flex-column">
-
-                        <div class="flex-grow-1">
-                            <p>Je me nomme Vigneron Tristan. Je suis un jeune développeur basé en France, plus particulièrement à Clermont-Ferrand. Mes deux grandes passions sont les jeux vidéo et la pâtisserie.</p>
-                        </div>
-                        <button class="btn btn-dark w-auto mt-auto mx-auto">
-                            <a href="contact.html" rel="nofollow" class="text-white text-decoration-none">Me contacter</a>
-                        </button>
-                    </div>
+        <section class="card-container bg-dark row">
+            <article class="card bg-dark col-md-4">
+                <div class="card-body d-flex flex-column">
+                    <h2 class="card-title">Qui je suis</h2>
+                    <p class="card-text flex-grow-1">Je me nomme Vigneron Tristan. Je suis un jeune développeur basé en France, plus particulièrement à Clermont-Ferrand. Mes deux grandes passions sont les jeux vidéo et la pâtisserie.</p>
+                    <a href="about.html" class="btn btn-custom" tabindex="0" aria-label="En savoir plus sur moi" rel="nofollow">En savoir plus</a>
                 </div>
             </article>
 
-            <article class="col-md-6 mb-2 d-flex flex-column">
-                <div class="bg-danger border border-light border-5 rounded p-3 flex-grow-1 d-flex flex-column">
-                    <h2>Mon Parcours Professionnel</h2>
-                    <div class="mb-2 flex-grow-1 d-flex flex-column">
+            <article class="card bg-dark col-md-4">
+                <div class="card-body d-flex flex-column">
+                    <h2 class="card-title">Contact</h2>
+                    <p class="card-text flex-grow-1">Vous souhaitez me contacter pour discuter d'un projet ou d'une collaboration ?</p>
+                    <a href="contact.html" class="btn btn-custom" tabindex="0" aria-label="Me contacter" rel="nofollow">Me contacter</a>
+                </div>
+            </article>
 
-                        <div class="flex-grow-1">
-                            <p>J'ai travaillé plusieurs années en tant que pâtissier et depuis 2022, je cherche à me reconvertir en tant que développeur. J'ai commencé par un diplôme de Développeur Web et Web Mobile (DWWM) et j'ai continué par un titre de Concepteur Développeur d'Applications (CDA).</p>
-                        </div>
-                        <button class="btn btn-dark w-auto mt-auto mx-auto">
-                            <a href="project.html" rel="nofollow" class="text-white text-decoration-none">Mes Projets</a>
-                        </button>
-                    </div>
+            <article class="card bg-dark col-md-4">
+                <div class="card-body d-flex flex-column">
+                    <h2 class="card-title">Mes Projets</h2>
+                    <p class="card-text flex-grow-1">Découvrez les projets sur lesquels j'ai travaillé, allant de la pâtisserie à la programmation.</p>
+                    <a href="project.html" class="btn btn-custom" tabindex="0" aria-label="Voir mes projets" rel="nofollow">Voir mes projets</a>
                 </div>
             </article>
         </section>

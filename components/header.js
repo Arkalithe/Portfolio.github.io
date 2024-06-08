@@ -8,12 +8,12 @@ function genereEntete() {
     let togglerIcon = document.createElement("span");
     let main = document.querySelector('main');
 
-    entete.classList.add("bg-primary", "w-100", "mb-2", "p-1");
+    entete.classList.add("bg-dark", "w-100", "p-1");
     entete.style.width = "100%";
     nav.classList.add("navbar", "navbar-expand-lg", "container-fluid", "d-flex", "justify-content-between");
     logoContainer.classList.add("navbar-brand");
     navBar.classList.add("navbar-nav", "ms-auto");
-    navbarToggler.classList.add("navbar-toggler");
+    navbarToggler.classList.add("navbar-toggler", "custom-toggler");
     togglerIcon.classList.add("navbar-toggler-icon");
 
     navbarToggler.setAttribute("type", "button");
@@ -34,44 +34,40 @@ function genereEntete() {
     navbarCollapse.appendChild(navBar);
     navbarToggler.appendChild(togglerIcon);
 
-
-
-
     function createNavButton(id, href, textContent, classes = []) {
         let navItem = document.createElement("li");
         navItem.classList.add("nav-item");
-    
+
         let button = document.createElement("a");
-    
-        button.classList.add("nav-link", "btn", ...classes, "m-1", "bg-primary", "text-center");
-    
-        button.id = `   ${id}`;
+
+        button.classList.add("nav-link", "btn", ...classes, "m-1", "btn-custom", "text-center");
+
+        button.id = `nav-${id}`;
         button.href = href;
         button.textContent = textContent;
-    
+
         navItem.appendChild(button);
         navBar.appendChild(navItem);
     }
-    
+
     const navButtons = [
         { id: 2, href: "./index.html", textContent: "Accueil" },
         { id: 3, href: "./about.html", textContent: "À propos" },
         { id: 4, href: "./contact.html", textContent: "Contact" },
         { id: 5, href: "./project.html", textContent: "Mes projets" }
     ];
-    
+
     navButtons.forEach(button => {
-        createNavButton(button.id, button.href, button.textContent, ["btn-primary", "border"]);
+        createNavButton(button.id, button.href, button.textContent, []);
     });
 }
-
-
 
 genereEntete();
 
 window.onload = function () {
     addBootsrapCSS();
     addBootsrapJs();
+    addCss()
 }
 
 function addBootsrapCSS() {
@@ -89,4 +85,12 @@ function addBootsrapJs() {
     script.integrity = "sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz";
     script.crossOrigin = "anonymous";
     document.body.appendChild(script);
+}
+
+function addCss() {
+    let head = document.querySelector("head");
+    let cssLink = document.createElement("link");
+    cssLink.href = "./styles.css"
+    cssLink.rel = "stylesheet"
+    head.appendChild(cssLink)
 }
