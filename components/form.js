@@ -103,6 +103,10 @@ function validateFormData(data) {
         errors.push('Veuillez entrer une adresse email valide.');
     }
 
+    if (!data.telephone || !validatePhone(data.telephone)) {
+        errors.push('Veuillez entrer un numéro de téléphone valide.');
+    }
+
     if (!data.description || data.description.trim().length === 0) {
         errors.push('Le champ "Motif du contact" est requis.');
     }
@@ -113,4 +117,9 @@ function validateFormData(data) {
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
+}
+
+function validatePhone(phone) {
+    const re = /^\+?[0-9\s\-]+$/;
+    return re.test(String(phone).toLowerCase());
 }

@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos($_SERVER['CONTENT_TYPE'], 'a
     $nom = (string)$data->nom;
     $prenom = (string)$data->prenom;
     $email = (string)$data->email;
+    $telephone = (string)$data->telephone;
     $description = (string)$data->description;
 
     $errors = [];
@@ -39,6 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos($_SERVER['CONTENT_TYPE'], 'a
     }
     if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Veuillez entrer une adresse email valide.';
+    }
+    if (empty($telephone) || !preg_match('/^\+?[0-9\s\-]+$/', $telephone)) {
+        $errors[] = 'Veuillez entrer un numéro de téléphone valide.';
     }
     if (empty($description)) {
         $errors[] = 'Le champ "Motif du contact" est requis.';
@@ -66,8 +70,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && strpos($_SERVER['CONTENT_TYPE'], 'a
 
         $mail->isHTML(true);
         $mail->Subject = 'Nouveau message de contact';
-        $mail->Body    = "Nom: $nom<br>Prénom: $prenom<br>Email: $email<br>Description: $description";
-        $mail->AltBody = "Nom: $nom\nPrénom: $prenom\nEmail: $email\nDescription: $description";
+        $mail->Body    = "Nom: $nom<br>Prénom: $prenom<br>Email: $email<br>Numéro de Téléphone: $telephone<br>Description: $description";
+        $mail->AltBody = "Nom: $nom\nPrénom: $prenom\nEmail: $email\nNuméro de Téléphone: $telephone\nDescription: $description";
 
         $mail->send();
         http_response_code(200);

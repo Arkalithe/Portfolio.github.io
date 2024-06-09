@@ -21,6 +21,11 @@
                 <type>email</type>
             </field>
             <field>
+                <label>Votre Numéro de Téléphone</label>
+                <id>telephone</id>
+                <type>tel</type>
+            </field>
+            <field>
                 <label>Motif du contact</label>
                 <id>description</id>
                 <type>textarea</type>
