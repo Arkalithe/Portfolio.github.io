@@ -99,10 +99,10 @@ body {
 
 .btn-custom:hover,
 .btn-custom:focus {
-    background-color: #e06f44; 
-    color: #333333; 
-    box-shadow: 0 0 0 4px rgba(255, 127, 80, 0.5); 
-    outline: none; 
+    background-color: #e06f44;
+    color: #333333;
+    box-shadow: 0 0 0 4px rgba(255, 127, 80, 0.5);
+    outline: none;
 }
 
 .btn-custom:focus {
@@ -166,19 +166,19 @@ body {
         border-radius: 5px;
         color: #333333;
         outline: none;
-    transition: background-color 0.3s, box-shadow 0.3s; 
+        transition: background-color 0.3s, box-shadow 0.3s;
     }
 
     .custom-toggler:hover,
-.custom-toggler:focus {
-    background-color: #e06f44; 
-    box-shadow: 0 0 0 4px rgba(255, 127, 80, 0.5); 
-    outline: none; 
-}
+    .custom-toggler:focus {
+        background-color: #e06f44;
+        box-shadow: 0 0 0 4px rgba(255, 127, 80, 0.5);
+        outline: none;
+    }
 
-.custom-toggler:focus {
-    box-shadow: 0 0 0 4px rgba(255, 127, 80, 0.5);
-}
+    .custom-toggler:focus {
+        box-shadow: 0 0 0 4px rgba(255, 127, 80, 0.5);
+    }
 
     .custom-toggler .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%288, 8, 8, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
@@ -188,51 +188,51 @@ body {
 
 /* Styles pour les éléments de formulaire */
 .form-label {
-    color: #333333; 
+    color: #333333;
 }
 
 .form-control {
     background-color: #444444;
-    border: 2px solid #ff7f50; 
-    border-radius: 5px; 
-    padding: 10px; 
+    border: 2px solid #ff7f50;
+    border-radius: 5px;
+    padding: 10px;
     color: #333333;
     width: calc(100% - 30px);
     margin: 5px auto;
 }
 
 .form-control:focus {
-    border-color: #e06f44; 
-    box-shadow: 0 0 5px rgba(255, 127, 80, 0.5); 
+    border-color: #e06f44;
+    box-shadow: 0 0 5px rgba(255, 127, 80, 0.5);
     background-color: #555555;
 }
 
 .btn-primary {
-    background-color: #ff7f50; 
-    color: #333333; 
-    border: none; 
-    border-radius: 5px; 
-    padding: 10px 20px; 
+    background-color: #ff7f50;
+    color: #333333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: #e06f44; 
-    box-shadow: 0 0 5px rgba(255, 127, 80, 0.5); 
-    outline: none; 
+    background-color: #e06f44;
+    box-shadow: 0 0 5px rgba(255, 127, 80, 0.5);
+    outline: none;
 }
 
 form.needs-validation {
-    border: 2px solid #ff7f50; 
+    border: 2px solid #ff7f50;
     border-radius: 15px;
     padding: 20px;
-    
+
 
 }
 
 .header-custom {
-    border-bottom: 2px solid #ff7f50; 
+    border-bottom: 2px solid #ff7f50;
     padding: 10px 0;
 }
 
@@ -242,7 +242,7 @@ form.needs-validation {
 
 form.needs-validation {
     max-width: 500px;
-    width: 100%; 
+    width: 100%;
 }
 
 /* Styles pour la page About*/
@@ -264,12 +264,13 @@ form.needs-validation {
     max-width: 50%;
     height: auto;
     border-radius: 200px;
-    border: 2px solid #ff7f50; 
+    border: 2px solid #ff7f50;
 }
+
 .bordered-container {
-    border: 2px solid #ff7f50; 
-    border-radius: 10px; 
-    padding: 20px; 
+    border: 2px solid #ff7f50;
+    border-radius: 10px;
+    padding: 20px;
     margin-top: 20px;
 }
 
@@ -289,16 +290,40 @@ form.needs-validation {
     padding: 20px;
     margin-top: 10px;
     border-radius: 10px;
-    border: 2px solid #ff7f50; 
+    border: 2px solid #ff7f50;
 }
 
 .card-project {
 
     border-radius: 10px;
-    border: 2px solid #ff7f50; 
+    border: 2px solid #ff7f50;
 }
 
 #back-button {
     display: none;
     margin-bottom: 20px;
 }
+
+.carousel-container {
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+}
+
+.carousel-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 100%;
+    height: 100%;
+}
+
