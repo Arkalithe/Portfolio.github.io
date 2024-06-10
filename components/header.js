@@ -1,4 +1,5 @@
 function genereEntete() {
+    //Creation des elements
     let entete = document.createElement("header");
     let nav = document.createElement("nav");
     let logoContainer = document.createElement("div");
@@ -8,6 +9,7 @@ function genereEntete() {
     let togglerIcon = document.createElement("span");
     let main = document.querySelector('main');
 
+    //Ajout des classe et des attributs
     entete.classList.add("bg-dark", "w-100", "p-1", "header-custom", );
     entete.style.width = "100%";
     nav.classList.add("navbar", "navbar-expand-lg", "container-fluid", "d-flex", "justify-content-between");
@@ -26,6 +28,7 @@ function genereEntete() {
     navbarCollapse.id = "navbarNav";
     navbarCollapse.classList.add("collapse", "navbar-collapse");
 
+    //Ajout dans l'arboresence du dom
     document.body.insertBefore(entete, main);
     entete.appendChild(nav);
     nav.appendChild(logoContainer);
@@ -63,7 +66,7 @@ function genereEntete() {
 }
 
 genereEntete();
-
+//ajoute de bootstrap et de mon style
 window.onload = function () {
     addBootsrapCSS();
     addBootsrapJs();

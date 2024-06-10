@@ -1,3 +1,4 @@
+//Parse xml et constroncution de form selon xml
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
 
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formElement.innerHTML += `<button type="submit" class="btn btn-primary">${submitButton}</button>`;
         });
 
+        //Submit des donné vers le back end
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
     
@@ -88,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//validation du formulaire avec les champs requis
 function validateFormData(data) {
     const errors = [];
 
@@ -113,7 +116,7 @@ function validateFormData(data) {
 
     return errors;
 }
-
+//Regex email et phone
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());

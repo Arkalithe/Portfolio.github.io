@@ -1,3 +1,4 @@
+//logique pour l'affichange des details
 function toggleDetails(id) {
     const details = document.getElementById(id);
     const cards = document.querySelectorAll('.card-project');
@@ -12,16 +13,16 @@ function toggleDetails(id) {
         if (details) {
             details.style.display = 'block';
         } else {
-            console.error(`Element with id "${id}" not found.`);
+
         }
         backButton.style.display = 'block';
         overlay.classList.add("d-flex" , "justify-content-center", 'align-items-center')
 
     } else {
-        console.error('Element with id "overlay" not found.');
+
     }
 }
-
+// Retour en arrière du Carousel
 function goBack() {
     const details = document.querySelectorAll('.project-details');
     const cards = document.querySelectorAll('.card-project');
@@ -40,10 +41,11 @@ function goBack() {
         backButton.style.display = 'none';
         overlay.style.display = 'none';
     } else {
-        console.error('Element with id "overlay" not found.');
+
     }
 }
 
+//Afficher ou cacher les details on click
 document.addEventListener('DOMContentLoaded', () => {
     const details = document.querySelectorAll('.project-details');
     const backButton = document.getElementById('back-button');
