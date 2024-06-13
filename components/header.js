@@ -14,7 +14,7 @@ function genereEntete() {
     entete.style.width = "100%";
     nav.classList.add("navbar", "navbar-expand-lg", "container-fluid", "d-flex", "justify-content-between");
     logoContainer.classList.add("navbar-brand");
-    navBar.classList.add("navbar-nav", "ms-auto");
+    navBar.classList.add("navbar-nav", "ms-auto", 'bg-dark');
     navbarToggler.classList.add("navbar-toggler", "custom-toggler");
     togglerIcon.classList.add("navbar-toggler-icon");
 
