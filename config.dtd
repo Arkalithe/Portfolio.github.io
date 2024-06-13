@@ -1,4 +1,4 @@
-<!ELEMENT configuration (contactForm)>
+<!ELEMENT configuration (contactForm, contactInfo)>
 <!ELEMENT contactForm (title, helpText, fields, submitButton)>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT helpText (#PCDATA)>
@@ -8,3 +8,7 @@
 <!ELEMENT id (#PCDATA)>
 <!ELEMENT type (#PCDATA)>
 <!ELEMENT submitButton (#PCDATA)>
+<!ELEMENT contactInfo (email, phone, cvLink)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT cvLink (#PCDATA)>

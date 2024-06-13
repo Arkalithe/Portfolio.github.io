@@ -222,12 +222,10 @@ body {
     outline: none;
 }
 
-form.needs-validation {
+.needs-validation {
     border: 2px solid #ff7f50;
     border-radius: 15px;
     padding: 20px;
-
-
 }
 
 .header-custom {
