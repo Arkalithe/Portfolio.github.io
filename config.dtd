@@ -8,7 +8,8 @@
 <!ELEMENT id (#PCDATA)>
 <!ELEMENT type (#PCDATA)>
 <!ELEMENT submitButton (#PCDATA)>
-<!ELEMENT contactInfo (email, phone, cvLink)>
+<!ELEMENT contactInfo (email,linkedin ,phone, cvLink)>
 <!ELEMENT email (#PCDATA)>
+<!ELEMENT linkedin (#PCDATA)>
 <!ELEMENT phone (#PCDATA)>
 <!ELEMENT cvLink (#PCDATA)>

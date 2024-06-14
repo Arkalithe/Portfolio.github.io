@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitButton = xmlDoc.getElementsByTagName('submitButton')[0].textContent;
 
             const contactEmail = xmlDoc.getElementsByTagName('email')[0].textContent;
+            const contactLinkedin = xmlDoc.getElementsByTagName('linkedin')[0].textContent;
             const contactPhone = xmlDoc.getElementsByTagName('phone')[0].textContent;
             const cvLink = xmlDoc.getElementsByTagName('cvLink')[0].textContent;
 
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.getElementById('contactEmail').textContent = contactEmail;
             document.getElementById('contactPhone').textContent = contactPhone;
+            document.getElementById('linkedin').textContent = contactLinkedin;
 
             const cvButton = document.getElementById('cvButton');
             cvButton.addEventListener('click', () => {
