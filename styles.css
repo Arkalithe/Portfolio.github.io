@@ -1,14 +1,32 @@
+:root {
+    --primary-color: #ff7f50;
+    --secondary-color: #222;
+    --background-color: #f0f2f5;
+    --text-color: #333;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Roboto;
 }
 
 html,
-body { 
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333;
     width: 100%;
     overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #c8c8c8;
+}
+p {
+    color: #c8c8c8;
 }
 
 /* Navbar Styles */
@@ -27,14 +45,15 @@ body {
 
 /* Body and Welcom Section */
 body {
-    background-color: #f0f2f5;
-    color: #333;
-}
-
-.welcome-section {
+    background-color: var(--background-color);
+    color: var(--text-color);
     background-image: url('./assets/image/background.jpg');
     background-size: cover;
     background-position: center;
+}
+
+.welcome-section {
+
     padding: 100px 0;
     color: white;
     text-align: center;
@@ -73,7 +92,7 @@ body {
     flex: 1;
     margin: 10px;
     border: none;
-    color: white;
+    color: #c8c8c8;
 }
 
 .card:not(:last-child) {
@@ -88,8 +107,8 @@ body {
 }
 
 .btn-custom {
-    background-color: #ff7f50;
-    color: #333333;
+    background: linear-gradient(45deg, #ff7f50, #bf3502);
+    color: var(--secondary-color);
     border: none;
     outline: none;
     padding: 10px 20px;
@@ -99,9 +118,9 @@ body {
 
 .btn-custom:hover,
 .btn-custom:focus {
-    background-color: #e06f44;
-    color: #333333;
-    box-shadow: 0 0 0 4px rgba(255, 127, 80, 0.5);
+    background: linear-gradient(135deg, #ff7f50, #bf3502);
+    color: var(--secondary-color);
+    box-shadow: 0 7px 15px rgba(255, 127, 80, 0.5);
     outline: none;
 }
 
@@ -110,8 +129,8 @@ body {
 }
 
 .btn-custom:hover {
-    background-color: #e06f44;
-    color: #333333;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* Styles pour les appareils mobiles */
@@ -201,13 +220,13 @@ body {
 }
 
 .form-control:focus {
-    border-color: #e06f44;
+    background: linear-gradient(45deg, #ff7f50, #bf3502);
     box-shadow: 0 0 5px rgba(255, 127, 80, 0.5);
     background-color: #cdcdcd;
 }
 
 .btn-primary {
-    background-color: #ff7f50;
+    background: linear-gradient(45deg, #ff7f50, #bf3502);
     color: #333333;
     border: none;
     border-radius: 5px;
@@ -331,4 +350,7 @@ form.needs-validation {
     border-top: #e06f44;
     border-style: solid;
     border-width: 2px;
+}
+.formData {
+    color: #cdcdcd;
 }
