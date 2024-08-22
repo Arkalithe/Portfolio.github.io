@@ -1,4 +1,16 @@
-//logique pour l'affichange des details
+
+function setElementsDisplay(elements, display) {
+    elements.forEach(element => {
+        element.style.display = display;
+    });
+}
+
+function addClasses(element, classes) {
+    classes.forEach(cls => {
+        element.classList.add(cls);
+    });
+}
+
 function toggleDetails(id) {
     const details = document.getElementById(id);
     const cards = document.querySelectorAll('.card-project');
@@ -6,23 +18,15 @@ function toggleDetails(id) {
     const overlay = document.getElementById('overlay');
 
     if (overlay) {
-        cards.forEach(card => {
-            card.style.display = 'none';
-        });
-
+        setElementsDisplay(cards, 'none');
         if (details) {
             details.style.display = 'block';
-        } else {
-
         }
         backButton.style.display = 'block';
-        overlay.classList.add("d-flex" , "justify-content-center", 'align-items-center')
-
-    } else {
-
+        addClasses(overlay, ["d-flex" , "justify-content-center", 'align-items-center']);
     }
 }
-// Retour en arrière du Carousel
+
 function goBack() {
     const details = document.querySelectorAll('.project-details');
     const cards = document.querySelectorAll('.card-project');
@@ -30,31 +34,18 @@ function goBack() {
     const overlay = document.getElementById('overlay');
 
     if (overlay) {
-        details.forEach(detail => {
-            detail.style.display = 'none';
-        });
-
-        cards.forEach(card => {
-            card.style.display = 'block';
-        });
-
+        setElementsDisplay(details, 'none');
+        setElementsDisplay(cards, 'block');
         backButton.style.display = 'none';
         overlay.style.display = 'none';
-    } else {
-
     }
 }
 
-//Afficher ou cacher les details on click
 document.addEventListener('DOMContentLoaded', () => {
     const details = document.querySelectorAll('.project-details');
     const backButton = document.getElementById('back-button');
     const overlay = document.getElementById('overlay');
-
-    details.forEach(detail => {
-        detail.style.display = 'none';
-    });
-
+    setElementsDisplay(details, 'none');
     backButton.style.display = 'none';
     overlay.style.display = 'none';
 });

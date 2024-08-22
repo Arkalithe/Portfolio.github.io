@@ -9,18 +9,16 @@
 
 <body>
     <main class="container mt-5">
-        <h2 class="text-center mb-5">Mes projets</h2>
-        <div id="back-button" class="text-center">
-            <button class="btn btn-custom" onclick="goBack()">Précédent</button>
-        </div>
+        <h2 class="text-center mb-2">Mes projets</h2>
+
         <section class="row text-center">
             <div class="col-md-6 mb-4">
                 <article class="card bg-dark card-project">
-                    <img src="path/to/image1.jpg" class="card-img-top  img-fluid w-100" alt="Projet 1">
+                    <img src="./assets/image/home.png" class="card-img-top  img-fluid w-100" alt="Projet 1">
                     <div class="card-body">
-                        <h3 class="card-title">Projet 1</h3>
-                        <p class="card-text">But du projet 1</p>
-                        <p class="card-text">Technologies utilisées : HTML, CSS, JS</p>
+                        <h3 class="card-title">Garage V Parrot</h3>
+                        <p class="card-text">Crée une site Vitrine pour un garage Automobile avec getion d'employe</p>
+                        <p class="card-text">Technologies utilisées : React, Symfony, Mysql</p>
                         <button class="btn btn-custom" onclick="toggleDetails('details1')">Voir plus</button>
                     </div>
                 </article>
@@ -96,6 +94,10 @@
                 <a href="http://deployed-site2.com" target="_blank" class="btn btn-custom mt-3">Voir le site</a>
             </article>
         </section>
+
+        <div id="back-button" class="text-center mt-3">
+            <button class="btn btn-custom" onclick="goBack()">Précédent</button>
+        </div>
     </main>
     <script src="./components/body.js"> </script>
     <script src="./components/header.js"> </script>
